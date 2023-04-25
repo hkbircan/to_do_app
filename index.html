@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body class="container-fluid bg-warning-subtle">
+
+    <h1 class="display-1 text-center">To Do App 23'</h1>
+
+    <div class="container-fluid addPart">
+
+
+        <div class="d-flex justify-content-end  ">
+            <label class="list-group-item fs-5 me-5 " for="">Priority</label>
+            <input id="startDateForTask" class="form border col-2 rounded bg-body-secondary" style="outline: none;"
+                type="date" value="2023-04-24" min="2023-01-01" max="2023-12-31" />
+        </div>
+
+
+        <div class="input-group ">
+            <input type="text" class="form-control col-8 me-1 addTaskDescription" placeholder="Task Description"
+                aria-label="Recipient's username with two button addons" required>
+
+            <div class="btn-group gap-1 addPriorty" role="group">
+                <input type="radio" class="btn-check" name="btnradio btnadd" id="btnradio1" autocomplete="off"
+                    value="High">
+                <label class="btn btn-outline-danger rounded-0" for="btnradio1">High</label>
+
+                <input type="radio" class="btn-check" name="btnradio btnadd" id="btnradio2" autocomplete="off"
+                    value="Mid">
+                <label class="btn btn-outline-warning" for="btnradio2">Mid</label>
+
+                <input type="radio" class="btn-check" name="btnradio btnadd" id="btnradio3" autocomplete="off" checked
+                    value="Low">
+                <label class="btn btn-outline-success rounded-0" for="btnradio3">Low</label>
+            </div>
+
+            <!-- <div class="btn-group border btn-outline-secondary col-2" role="group">
+                <button type="button" class="btn btn-danger">Left</button>
+                <button type="button" class="btn btn-warning">Middle</button>
+                <button type="button" class="btn btn-success">Right</button>
+            </div> -->
+            <!-- <button class="btn border btn-outline-secondary col-2" type="button">Today</button> -->
+            <button class="btn btn-outline-secondary col-2 ms-1 addBtn" type="button">Add</button>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5 listOfTasks">
+        <div class="d-flex justify-content-end  ">
+            <label class="list-group-item fs-5 pe-1 mb-1 border border-dark-subtle">Choose a
+                Date</label>
+            <input id="startDateForList"
+                class="form border col-2 rounded rounded-start-0 bg-body-tertiary mb-1 border border-dark-subtle border-start-0"
+                style="outline: none;" type="date" value="2023-04-24" min="2023-01-01" max="2023-12-31" />
+        </div>
+
+        <div class="list-group d-flex justify-content-between g-1 d-none listTask">
+            <li class="list-group-item list-group-item-danger d-flex justify-content-between mb-1 rounded"
+                style="cursor: default; display: none;">
+
+                <span class="my-auto fs-4" disabled> asdada</span>
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+                    <div class="dropdown d-inline-block justify-content-end me-1">
+
+                        <button type="button" class="btn btn-primary dropdown-toggle " data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-auto-close="outside" disabled>
+                            Edit
+                        </button>
+
+                        <form class="dropdown-menu p-4" >
+                            <div class="mb-3">
+                                <label for="exampleDropdownFormEmail2" class="form-label">Some Task</label>
+                                <input type="text" class="form-control" id="newDescription" placeholder="Description">
+                            </div>
+                            <div class="mb-3">
+                                <div class=" d-flex">
+                                    <label class="list-group-item bg-body border-0" for="startDateEdit"></label>
+                                    <input id="startDateEdit" class="form bg-body-tertiary border-1" type="date"
+                                        style="outline: none;" value="2023-04-24" min="2023-01-01" max="2023-12-31" />
+                                </div>
+
+                                <label for="exampleDropdownFormPassword2" class="form-label">Priorty</label>
+
+                                <div class="btn-group gap-1" role="group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradioDm1"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-danger rounded-0" for="btnradioDm1">High</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2Dm2"
+                                        autocomplete="on">
+                                    <label class="btn btn-outline-warning" for="btnradio2Dm2">Mid</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3Dm3"
+                                        autocomplete="off" checked>
+                                    <label class="btn btn-outline-success rounded-0" for="btnradio3Dm3">Low</label>
+                                </div>
+
+                            </div>
+                            <button class="btn btn-outline-secondary " type="button">Add</button>
+                        </form>
+                    </div>
+
+                    <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" disabled>
+                    <label class="btn btn-outline-success rounded me-1 doneBtn "
+                        for="btn-check-outlined" disabled>Done</label>
+                    <button type="button" class="btn btn-danger rounded me-1 deleteBtn">Delete</button>
+                </div>
+            </li>
+        </div>
+        
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
